@@ -2,7 +2,7 @@ SELECT CASE WHEN [Test].[Date] < [Live].[Date] THEN 'Live aktueller'
             WHEN [Test].[Date] > [Live].[Date] THEN 'Test aktueller'
             WHEN [Test].[Time] <> [Live].[Time] THEN 'Zeit unterschiedlich'
 			WHEN [Test].[Version List] <> [Live].[Version List] THEN 'Version unterschiedlich'
-			WHEN [Test].[BLOB Size] <> [Live].[BLOB Size] THEN 'Größe unterschiedlich'
+			WHEN [Test].[BLOB Size] <> [Live].[BLOB Size] THEN 'GrÃ¶ÃŸe unterschiedlich'
        END [Unterschied]
      , CASE [Live].[Type]
 	     WHEN 1 THEN 'Table'
