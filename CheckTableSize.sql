@@ -1,6 +1,7 @@
 /*
 Ermittelt die Anzahl der Datensätze pro Tabelle für einen Mandanten
-Dies ist sehr interessant
+
+Noch ein Versuch
 */
 
 DECLARE @stmt AS VARCHAR(MAX)
