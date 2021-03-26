@@ -1,9 +1,7 @@
 /*
 Dies ist ein Objektvergleich zwischen einer TEST und LIVE-Datenbank
 
-
-
-
+#FIXME:Hier stimmt etwas nicht
 */
 SELECT CASE WHEN [Test].[Date] < [Live].[Date] THEN 'Live aktueller'
             WHEN [Test].[Date] > [Live].[Date] THEN 'Test aktueller'
@@ -13,9 +11,13 @@ SELECT CASE WHEN [Test].[Date] < [Live].[Date] THEN 'Live aktueller'
        END [Unterschied]
      , CASE [Live].[Type]
 	     WHEN 1 THEN 'Table'
+		 WHEN 2 THEN 'Form'
 		 WHEN 3 THEN 'Report'
+		 --#FIXME: Hier fehlt noch etwas
 		 WHEN 5 THEN 'Codeunit'
+		 --#FIXME: Hier fehlt noch etwas
 		 WHEN 8 THEN 'Page'
+		 WHEN 9 THEN 'Menusuite'
 		 ELSE CONVERT(VARCHAR(MAX), [Live].[Type])
 	   END [Type]
 	 , [Live].ID
@@ -25,9 +27,13 @@ SELECT CASE WHEN [Test].[Date] < [Live].[Date] THEN 'Live aktueller'
 	 , CONVERT(VARCHAR(MAX), [Live].[Time], 108) [Time]
      , CASE [Test].[Type]
 	     WHEN 1 THEN 'Table'
+		 WHEN 2 THEN 'Form'
 		 WHEN 3 THEN 'Report'
+		 --#FIXME: Hier fehlt noch etwas
 		 WHEN 5 THEN 'Codeunit'
+		 --#FIXME: Hier fehlt noch etwas
 		 WHEN 8 THEN 'Page'
+		 WHEN 9 THEN 'Menusuite'
 		 ELSE CONVERT(varchar(MAX), [Test].[Type])
 		END [Test Type]
 	 , [Test].ID [Test ID]
