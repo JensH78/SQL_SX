@@ -42,8 +42,8 @@ SELECT CASE WHEN [Test].[Date] < [Live].[Date] THEN 'Live aktueller'
 	 , CONVERT(VARCHAR(MAX), [Test].[Time], 108) [Test Time]
 	 ,Test.[Locked]
 	 ,Live.[Locked]
-FROM [SEPNAVLIVE].dbo.[Object] [Live]
-FULL OUTER JOIN [TEMP_NAV].dbo.[Object] [Test]
+FROM [SEPNAVLIVE].dbo.[Object] [Live] --#FIXME:Allgemeine Datenbank
+FULL OUTER JOIN [TEMP_NAV].dbo.[Object] [Test] --#FIXME:Allgemeine Datenbank
 ON [Live].[Type] = [Test].[Type] AND
    [Live].[ID] = [Test].[ID]
 WHERE ([Live].[Type] > 0 AND
