@@ -10,7 +10,7 @@ DECLARE TableCursor cursor FOR
 
 SELECT REPLACE(REPLACE(REPLACE([Name],'/','_'),'.','_'),'%','_')
 FROM dbo.[Object]
-WHERE [Company Name] LIKE '30%'
+WHERE [Company Name] LIKE '30%' --#FIXME: Allgemeiner Mandantenfilter
 
 CREATE TABLE #TableAnalyse
 (        
@@ -25,7 +25,7 @@ SET @stmt =
 'INSERT INTO #TableAnalyse
  SELECT '''+@CuTableName+''',
  COUNT(*)
- FROM [dbo].[30 Simplex Armaturen & Systeme$' + @CuTableName + ']'  
+ FROM [dbo].[30 Simplex Armaturen & Systeme$' + @CuTableName + ']'  --#FIXME: Allgemeiner Mandant
 
 --PRINT(@stmt)
 EXEC(@stmt)

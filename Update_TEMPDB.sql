@@ -18,37 +18,37 @@ GO
 ALTER DATABASE [TEMP_NAV] SET RECOVERY SIMPLE
 GO
 
-UPDATE [TEMP_NAV].[dbo].[30 Simplex Armaturen & Systeme$Company Information]
+UPDATE [TEMP_NAV].[dbo].[30 Simplex Armaturen & Systeme$Company Information] --#FIXME:Allgemeine Mandantennamen
 SET [System Indicator Style] = '1',[System Indicator] = '1',[Custom System Indicator Text] = N'ACHTUNG !!! TEST-Datenbank !!! Stand: ' + CONVERT(NVARCHAR(MAX),GETDATE(),104);
 GO
 
-UPDATE [TEMP_NAV].[dbo].[31 Seppelfricke Simplex Austri$Company Information]
+UPDATE [TEMP_NAV].[dbo].[31 Seppelfricke Simplex Austri$Company Information] --#FIXME:Allgemeine Mandantennamen
 SET [System Indicator Style] = '1',[System Indicator] = '1',[Custom System Indicator Text] = N'ACHTUNG !!! TEST-Datenbank !!! Stand: ' + CONVERT(NVARCHAR(MAX),GETDATE(),104);
 GO
 
 --Komm-Adapter auf inaktiv setzen
-UPDATE [TEMP_NAV].[dbo].[30 Simplex Armaturen & Systeme$ESCM Com_ Adapter]
+UPDATE [TEMP_NAV].[dbo].[30 Simplex Armaturen & Systeme$ESCM Com_ Adapter] --#FIXME:Allgemeine Mandantennamen
 SET [Active] = 0
 GO
 
 --Komm Buchblatt Automatik deaktivieren
-UPDATE [TEMP_NAV].[dbo].[30 Simplex Armaturen & Systeme$ESCM Com_ Journal]
+UPDATE [TEMP_NAV].[dbo].[30 Simplex Armaturen & Systeme$ESCM Com_ Journal] --#FIXME:Allgemeine Mandantennamen
 SET [Posting Automation] = 0
    ,[Proposal Calc_ Automation] = 0
 GO
 
 --Bei Nachrichtenaustausch Komm-Adapter herausnehmen
-UPDATE [TEMP_NAV].[dbo].[30 Simplex Armaturen & Systeme$ESCM Message Exchange]
+UPDATE [TEMP_NAV].[dbo].[30 Simplex Armaturen & Systeme$ESCM Message Exchange] --#FIXME:Allgemeine Mandantennamen
 SET [Com_ Adapter] = ''
 GO
 
 --In Aalberts Setup das Flag Test-Datenbank setzen
-UPDATE [TEMP_NAV].[dbo].[30 Simplex Armaturen & Systeme$Aalberts Setup]
+UPDATE [TEMP_NAV].[dbo].[30 Simplex Armaturen & Systeme$Aalberts Setup] --#FIXME:Allgemeine Mandantennamen
 SET [Test Database] = 1
 GO
 
 --Archiv deaktivieren und auf manuelle Archivierung umstellen
-UPDATE [TEMP_NAV].dbo.[30 Simplex Armaturen & Systeme$Document Archive Setup]
+UPDATE [TEMP_NAV].dbo.[30 Simplex Armaturen & Systeme$Document Archive Setup] --#FIXME:Allgemeine Mandantennamen
 SET [Archive activ] = 0,
 	[Archive Folder] = REPLACE([Archive Folder],'Produktiv','Test'),
     [Acknowledgment Folder] = REPLACE([Acknowledgment Folder],'Produktiv','Test'),
@@ -59,5 +59,5 @@ SET [Archive activ] = 0,
 GO
 
 --Änderungsprotokoll leeren
-TRUNCATE TABLE [TEMP_NAV].[dbo].[30 Simplex Armaturen & Systeme$Change Log Entry]
+TRUNCATE TABLE [TEMP_NAV].[dbo].[30 Simplex Armaturen & Systeme$Change Log Entry] --#FIXME:Allgemeine Mandantennamen
 GO
