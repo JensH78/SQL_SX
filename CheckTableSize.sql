@@ -1,16 +1,19 @@
 /*
 Ermittelt die Anzahl der Datensätze pro Tabelle für einen Mandanten
 
-Noch ein Versuch
 */
 
 DECLARE @stmt AS VARCHAR(MAX)
       , @CuTableName AS VARCHAR(MAX)
+      , @CompanyName AS VARCHAR(MAX)
+
+SET @CompanyName = '30 Simplex Armaturen & Systeme'
+
 DECLARE TableCursor cursor FOR
 
 SELECT REPLACE(REPLACE(REPLACE([Name],'/','_'),'.','_'),'%','_')
 FROM dbo.[Object]
-WHERE [Company Name] LIKE '30%' --#FIXME: Allgemeiner Mandantenfilter
+WHERE [Company Name] LIKE @CompanyName
 
 CREATE TABLE #TableAnalyse
 (        
@@ -25,7 +28,7 @@ SET @stmt =
 'INSERT INTO #TableAnalyse
  SELECT '''+@CuTableName+''',
  COUNT(*)
- FROM [dbo].[30 Simplex Armaturen & Systeme$' + @CuTableName + ']'  --#FIXME: Allgemeiner Mandant
+ FROM [dbo].['+@CompanyName+'$' + @CuTableName + ']'
 
 --PRINT(@stmt)
 EXEC(@stmt)
