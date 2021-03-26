@@ -1,6 +1,3 @@
---Mein Test
-
---TEST
 SELECT CASE WHEN [Test].[Date] < [Live].[Date] THEN 'Live aktueller'
             WHEN [Test].[Date] > [Live].[Date] THEN 'Test aktueller'
             WHEN [Test].[Time] <> [Live].[Time] THEN 'Zeit unterschiedlich'
