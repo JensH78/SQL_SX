@@ -1,8 +1,12 @@
 /*
 Dies ist ein Objektvergleich zwischen einer TEST und LIVE-Datenbank
+
 Verdammt, das muss doch irgendwie funktionieren...
 
+#TODO: Hier muss mal was gemacht werden!!!
 #FIXME:Hier stimmt etwas nicht
+
+Das kriegen wir schon hin...
 */
 SELECT CASE WHEN [Test].[Date] < [Live].[Date] THEN 'Live aktueller'
             WHEN [Test].[Date] > [Live].[Date] THEN 'Test aktueller'
