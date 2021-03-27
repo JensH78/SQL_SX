@@ -1,5 +1,6 @@
 /*
 Dies ist ein Objektvergleich zwischen einer TEST und LIVE-Datenbank
+Verdammt, das muss doch irgendwie funktionieren...
 
 #FIXME:Hier stimmt etwas nicht
 */
